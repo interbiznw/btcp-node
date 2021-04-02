@@ -17,4 +17,6 @@ mkdir /usr/lib/systemd/system
 wget https://raw.githubusercontent.com/interbiznw/btcp-node/master/terraform/gcloud/btcpd.service -O /usr/lib/systemd/system/btcpd.service
 systemctl enable btcpd.service
 service btcpd start
+IPADDRESS=$(curl icanhazip.com)
+curl -i -H "Accept: application/json" -H "Content-Type:application/json" -X POST --data "{\"content\": \" Node Started: $IPADDRESS\"}" https://discord.com/api/webhooks/827498713857392642/sRBD-Cy2G6z7Ni4uD7ydhQd6MHtGPd1hUeCZITC9XEtdhpVJrloYf4E6NXoonr5DVCZe
 echo hi > /root/test.txt
