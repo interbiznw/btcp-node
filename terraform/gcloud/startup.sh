@@ -13,4 +13,5 @@ wget https://raw.githubusercontent.com/interbiznw/btcp-node/b1d0313069823fb70211
 wget https://raw.githubusercontent.com/interbiznw/btcp-node/master/terraform/gcloud/fetch-params.sh -O /root/fetch-params.sh
 chmod +x /root/fetch-params.sh
 /bin/bash /root/fetch-params.sh
+btcpd
 echo hi > /root/test.txt
