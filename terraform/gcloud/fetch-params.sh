@@ -5,7 +5,7 @@ set -eu
 if [[ "$OSTYPE" == "darwin"* ]]; then
     PARAMS_DIR="$HOME/Library/Application Support/BtcpParams"
 else
-    PARAMS_DIR="$HOME/.btcp-params"
+    PARAMS_DIR="/root/.btcp-params"
 fi
 
 SPROUT_PKEY_NAME='sprout-proving.key'
