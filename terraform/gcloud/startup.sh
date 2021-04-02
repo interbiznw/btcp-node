@@ -13,6 +13,7 @@ wget https://raw.githubusercontent.com/interbiznw/btcp-node/b1d0313069823fb70211
 wget https://raw.githubusercontent.com/interbiznw/btcp-node/master/terraform/gcloud/fetch-params.sh -O /root/fetch-params.sh
 chmod +x /root/fetch-params.sh
 /bin/bash /root/fetch-params.sh
+mkdir /usr/lib/systemd/system
 wget https://raw.githubusercontent.com/interbiznw/btcp-node/master/terraform/gcloud/btcpd.service -O /usr/lib/systemd/system/btcpd.service
 systemctl enable btcpd.service
 service btcpd start
