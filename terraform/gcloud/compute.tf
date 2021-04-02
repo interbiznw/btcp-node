@@ -3,6 +3,7 @@ resource "google_compute_instance" "btcp-node" {
   zone = var.region_zone
   name = var.instancename
   machine_type = var.type
+  tags = ["terraformnodes"]
   boot_disk {
     initialize_params {
       image = "ubuntu-1604-lts"
