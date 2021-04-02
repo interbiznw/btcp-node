@@ -1,7 +1,8 @@
 resource "google_compute_instance" "btcp-node" {
   project = var.project
   zone = var.region_zone
-  name = var.instancename
+  count = var.instance_count
+  name = "${var.basename}-${count.index}"
   machine_type = var.type
   tags = ["terraformnodes"]
   boot_disk {

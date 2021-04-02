@@ -1,8 +1,8 @@
 # Gcloud Settings
 
-variable "instancename" {
+variable "baseename" {
   type = string
-  default = "btcp-node1"
+  default = "btcp-node"
 }
 
 # variable to identify environment
