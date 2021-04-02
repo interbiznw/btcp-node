@@ -1,6 +1,6 @@
 # Gcloud Settings
 
-variable "baseename" {
+variable "basename" {
   type = string
   default = "btcp-node"
 }
