@@ -11,7 +11,7 @@ resource "google_compute_instance" "btcp-node" {
       type = "pd-standard"
     }
   }
-  metadata_startup_script = "apt-get update && apt-get -y install python-pip && pip install ansible && HOME=/root ansible-pull -o -d /opt/bitcoin-node -U https://github.com/bonovoxly/bitcoin-node /opt/bitcoin-node/ansible/bitcoin_node.yml >> /var/log/ansible-pull.log"
+  metadata_startup_script = "echo hi > /test.txt"
   network_interface {
     network = "default"
     access_config {
