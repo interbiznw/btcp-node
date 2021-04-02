@@ -1,5 +1,5 @@
-resource "google_compute_firewall" "btcp" {
-  name    = "btcpd"
+resource "google_compute_firewall" "btcp-terraform" {
+  name    = "btcpd-terraform"
   network = "default"
   allow {
     protocol = "tcp"
