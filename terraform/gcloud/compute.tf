@@ -1,7 +1,7 @@
-resource "google_compute_instance" "bitcoin-node" {
+resource "google_compute_instance" "btcp-node" {
   project = "${ var.project }"
   zone = "${ var.region_zone }"
-  name = "bitcoin-node"
+  name = "btcp-node"
   machine_type = "${ var.type }"
   boot_disk {
     initialize_params {

@@ -4,7 +4,7 @@ The following deploys an Ubuntu 16.04 LTS f1.micro Google Cloud Compute Engine V
 
 Please note...  the default uses the free `f1.micro` instance. This is a .6 GB RAM system.  It's not great. It would be recommended to edit the [variables.tf](https://github.com/bonovoxly/bitcoin-node/blob/master/terraform/gcloud/variables.tf) and use a `g1.small`, which is a 1.7 GB RAM system.
 
-## Requirements 
+## Requirements
 
 These instructions assume that you:
 
@@ -33,7 +33,7 @@ gcloud projects list
 - Set it to the default (useful for future commands):
 
 ```
-gcloud config set project bitcoin-node-<NUMBER>
+gcloud config set project full-nodes
 ```
 
 - Next you'll need your billing account ID.  [It can be found on the Google Cloud Platform billing page](https://console.cloud.google.com/billing), or through the SDK:
@@ -51,13 +51,13 @@ gcloud beta billing projects link bitcoin-node-<NUMBER> --billing-account <BILLI
 - Configure the Terraform service account. [It can be found on the Google Cloud Platform IAM page](https://console.cloud.google.com/iam-admin/serviceaccounts), or through the SDK:
 
 ```
-gcloud iam service-accounts create bitcoin-node-terraformm --display-name "Bitcoin-node Terraform account"
-gcloud iam service-accounts keys create ~/.config/bitcoin-node-terraform.json --iam-account bitcoin-node-terraform@bitcoin-node-<NUMBER>.iam.gserviceaccount.com
-gcloud projects add-iam-policy-binding bitcoin-node-<NUMBER> --member serviceAccount:bitcoin-node-terraform@bitcoin-node-<NUMBER>.iam.gserviceaccount.com --role roles/viewer
+gcloud iam service-accounts create btcp-node-terraform --display-name "Btcp-node Terraform account"
+gcloud iam service-accounts keys create ~/.config/btcp-node-terraform.json --iam-account btcp-node-terraform@full-nodes.iam.gserviceaccount.com
+gcloud projects add-iam-policy-binding full-nodes --member serviceAccount:btcp-node-terraform@full-nodes.iam.gserviceaccount.com --role roles/viewer
 ```
 
 - Enable the Compute API -
- 
+
 ```
 gcloud services enable compute.googleapis.com
 ```
@@ -66,8 +66,8 @@ gcloud services enable compute.googleapis.com
 - Configure environment variables:
 
 ```
-export GOOGLE_CREDENTIALS=$(cat ~/.config/bitcoin-node-terraform.json)
-export GOOGLE_PROJECT=bitcoin-node-<NUMBER>
+export GOOGLE_CREDENTIALS=$(cat ~/.config/btcp-node-terraform.json)
+export GOOGLE_PROJECT=full-nodes
 ```
 
 - And that should be it! Now to Terraform...
@@ -83,7 +83,7 @@ Note the above will ask you for your project ID (the `bitcoin-node-<NUMBER>`). Y
 To SSH to your instance, you can use the gcloud interface:
 
 ```
-gcloud compute --project "bitcoin-node-<NUMBER>" ssh --zone "us-west1-a" "bitcoin-node"
+gcloud compute --project "full-nodes" ssh --zone "us-west1-a" "btcp-node"
 ```
 
 

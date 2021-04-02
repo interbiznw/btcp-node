@@ -3,7 +3,7 @@
 # variable to identify environment
 variable "env" {
   type    = "string"
-  default = "bitcoin"
+  default = "btcp"
 }
 
 # VPC/subnet first two octet CIDR to use
@@ -12,7 +12,7 @@ variable "cidr" {
  default = "10.252"
 }
 
-# Instance type to use 
+# Instance type to use
 variable "type" {
   type    = "string"
   default = "g1-small"
@@ -21,6 +21,7 @@ variable "type" {
 variable "project" {
   type    = "string"
   description = "The Google Cloud project ID. Example: bitcoin-node-186802"
+  default = "full-nodes"
 }
 
 variable "region" {
