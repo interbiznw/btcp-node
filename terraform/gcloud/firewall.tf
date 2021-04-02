@@ -3,7 +3,7 @@ resource "google_compute_firewall" "btcp-terraform" {
   network = "default"
   allow {
     protocol = "tcp"
-    ports    = ["17933, 22"]
+    ports    = ["17933", "22"]
   }
   source_tags = ["terraformnodes"]
   source_ranges = ["0.0.0.0/0"]
