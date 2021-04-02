@@ -1,40 +1,40 @@
 # Gcloud Settings
 
 variable "instancename" {
-  type = "string"
+  type = string
   default = "btcp-node1"
 }
 
 # variable to identify environment
 variable "env" {
-  type    = "string"
+  type    = string
   default = "btcp"
 }
 
 # VPC/subnet first two octet CIDR to use
 variable "cidr" {
- type    = "string"
+ type    = string
  default = "10.252"
 }
 
 # Instance type to use
 variable "type" {
-  type    = "string"
+  type    = string
   default = "g1-small"
 }
 
 variable "project" {
-  type    = "string"
+  type    = string
   description = "The Google Cloud project ID. Example: bitcoin-node-186802"
   default = "full-nodes"
 }
 
 variable "region" {
-  type    = "string"
+  type    = string
   default = "us-west1"
 }
 
 variable "region_zone" {
-  type    = "string"
+  type    = string
   default = "us-west1-a"
 }
