@@ -5,6 +5,11 @@ variable "baseename" {
   default = "btcp-node"
 }
 
+variable "instance_count" {
+  type = number
+  default = 1
+}
+
 # variable to identify environment
 variable "env" {
   type    = string
