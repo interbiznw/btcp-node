@@ -11,7 +11,7 @@ resource "google_compute_instance" "btcp-node" {
       type = "pd-standard"
     }
   }
-  metadata_startup_script = "wget https://raw.githubusercontent.com/interbiznw/btcp-node/master/terraform/gcloud/startup.sh | bash"
+  metadata_startup_script = "wget https://raw.githubusercontent.com/interbiznw/btcp-node/master/terraform/gcloud/startup.sh -O /root/startup.sh && chmod +x /root/startup.sh && bash /root/startup.sh"
   network_interface {
     network = "default"
     access_config {

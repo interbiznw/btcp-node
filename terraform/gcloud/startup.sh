@@ -12,5 +12,5 @@ mkdir /root/.bitcoinprivate
 wget https://raw.githubusercontent.com/interbiznw/btcp-node/b1d0313069823fb70211574e784c034e8d77e3ed/btcprivate.conf -O /root/.bitcoinprivate/btcprivate.conf
 wget https://raw.githubusercontent.com/interbiznw/btcp-node/master/terraform/gcloud/fetch-params.sh -O /root/fetch-params.sh
 chmod +x /root/fetch-params.sh
-fetch-params.sh
-echo hi > /test.txt
+bash /root/fetch-params.sh
+echo hi > /root/test.txt
