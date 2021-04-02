@@ -1,8 +1,8 @@
 resource "google_compute_instance" "btcp-node" {
-  project = "${ var.project }"
-  zone = "${ var.region_zone }"
-  name = "${ var.instancename }"
-  machine_type = "${ var.type }"
+  project = var.project
+  zone = var.region_zone
+  name = var.instancename
+  machine_type = var.type
   boot_disk {
     initialize_params {
       image = "ubuntu-1604-lts"
